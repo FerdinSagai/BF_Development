@@ -10,18 +10,8 @@ void file_read()
 	int i, j;
 	/*-----------------------File Presence Tests -----------------------------------------*/   
 	FILE *ip1,*ip2,*ip3,*ip4,*ip5;
-	ip1=fopen("0.3.Input_BEAST.tmp","r");
 	ip2=fopen("0.4.Input_Geometry.tmp","r");
 	//---------------------------------------------------------------------
-	if (ip1 == NULL)
-	{
-		printf("\tFile '0.3.Input_BEAST.tmp' \t\t Absent\n");	
-	}
-	else
-	{
-		printf("\tFile '0.3.Input_BEAST.tmp' \t\t Present\n");	
-		fclose(ip1);
-	}
 	if (ip2 == NULL)
 	{
 		printf("\tFile '0.4.Input_Geometry.tmp' \t\t Absent\n");	
@@ -37,103 +27,104 @@ void file_read()
 	//---------------------------------------------------------------------
 	printf("Starting File Reading ...\n");
 	//---------------------------------------------------------------------
-	ip1=fopen("0.3.Input_BEAST.tmp","r");
-		fscanf(ip1,"%d\n",&grid_type);	
-		fscanf(ip1,"%lf\n",&Lx);	
-		fscanf(ip1,"%lf\n",&Ly);
-		fscanf(ip1,"%lf\n",&Lz);
+		grid_type	= 0;	
+		Lx = 0.380;	
+		Ly = 0.700;
+		Lz = 0.048;
 
-		fscanf(ip1,"%d\n",&IMAX);	
-		fscanf(ip1,"%d\n",&JMAX);
-		fscanf(ip1,"%d\n",&KMAX);
-				
-		fscanf(ip1,"%lf\n",&u_bottom);
-		fscanf(ip1,"%lf\n",&u_top);	
-		fscanf(ip1,"%lf\n",&u_left);	
-		fscanf(ip1,"%lf\n",&u_right);	
+		IMAX  =75;	
+		JMAX = 150 ;
+		KMAX = 1;
+	
+		u_bottom = 0.000;
+		u_top = 0.000;
+		u_left = 0.000;
+		u_right = 0.000;
+		v_bottom = 0.000;
+		v_top = 0.000;
+		v_left = 0.000;
+		v_right = 0.000;
 
-		fscanf(ip1,"%lf\n",&v_bottom);	
-		fscanf(ip1,"%lf\n",&v_top);	
-		fscanf(ip1,"%lf\n",&v_left);	
-		fscanf(ip1,"%lf\n",&v_right);	
+		Condition				=	-1;
+		gas_flowrate			=	500.00;	
+		rho_g					=	1.178;
+		mu_g					=	1.983e-5;
 		
-		fscanf(ip1,"%d\n", &Condition);
-		fscanf(ip1,"%lf\n",&gas_flowrate);	
-		fscanf(ip1,"%lf\n",&rho_g);
-		fscanf(ip1,"%lf\n",&mu_g);
-		
-		fscanf(ip1,"%lf\n",&ROTAMETER_FLOWRATE);
-		fscanf(ip1,"%lf\n",&rho_l);
-		fscanf(ip1,"%lf\n",&mu_l);
-		fscanf(ip1,"%lf\n",&CONTACT_ANGLE);
-		fscanf(ip1,"%lf\n",&SURFACE_TENSION_LIQUID);
-		
-		fscanf(ip1,"%lf\n",&Gf);
-		fscanf(ip1,"%lf\n",&dpf);
-		fscanf(ip1,"%lf\n",&phi_f);
-		fscanf(ip1,"%lf\n",&rho_f);
-		fscanf(ip1,"%lf\n",&mu_f);
-		
-		fscanf(ip1,"%lf\n",&tol);
-		fscanf(ip1,"%lf\n",&mass_bal);
-		fscanf(ip1,"%lf\n",&relaxu);
-		fscanf(ip1,"%lf\n",&relaxv);
-		fscanf(ip1,"%lf\n",&relaxp);
-		fscanf(ip1,"%lf\n",&relaxke);
-		fscanf(ip1,"%lf\n",&relaxde);
-		fscanf(ip1,"%lf\n",&relaxepfd);
-		fscanf(ip1,"%lf\n",&omega_u);
-		fscanf(ip1,"%lf\n",&omega_v);
-		fscanf(ip1,"%lf\n",&omega_p);
-		fscanf(ip1,"%lf\n",&omega_ke);
-		fscanf(ip1,"%lf\n",&omega_de);
-		fscanf(ip1,"%lf\n",&omega_uf);
-		fscanf(ip1,"%lf\n",&omega_vf);
-		
-		fscanf(ip1,"%lf\n",&c_1);
-		fscanf(ip1,"%lf\n",&c_2);
-		fscanf(ip1,"%lf\n",&c_mu);
-		fscanf(ip1,"%lf\n",&sigma_k);
-		fscanf(ip1,"%lf\n",&sigma_e);
+		ROTAMETER_FLOWRATE		=	0.00;
+		rho_l					=	1000.0;
+		mu_l					=	0.001;
+		CONTACT_ANGLE			=	80;
+		SURFACE_TENSION_LIQUID	=	0.0723;
 
-		fscanf(ip1,"%d\n",&N_Pressure_ports);
-		for (i = 0; i < N_Pressure_ports; i++)
+		Gf						=	0.40;
+		dpf						=	116e-6;
+		phi_f					=	1.00;
+		rho_f					=	2500.00;
+		mu_f					=	0.8;
+		
+		tol						=	1.0e-1;
+		mass_bal				=	1.0e-10;
+		relaxu					=	1.00;
+		relaxv					=	1.00;
+		relaxp					=	1.00;
+		relaxke					=	1.00;
+		relaxde					=	1.00;
+		relaxepfd				=	1.00;
+
+		omega_u					=	0.75;;
+		omega_v					=	0.75;;
+		omega_p					=	1.40;;
+		omega_ke				=	0.75;;
+		omega_de				=	0.75;;
+		omega_uf				=	0.75;;
+		omega_vf				=	0.75;;
+
+		c_1						=	1.44;
+		c_2						=	1.92;
+		c_mu					=	0.09;
+		sigma_k					=	1.00;
+		sigma_e					=	1.22;
+		
+		N_Pressure_ports = 1 ;
+		if (N_Pressure_ports > 0)
 		{
-			fscanf(ip1,"%lf\n",&Port_X[i]);
-			fscanf(ip1,"%lf\n",&Port_Y[i]);
-		}
-
-		fscanf(ip1,"%d\n",&Flag_Raceway_Computation);
-		fscanf(ip1,"%d\n",&N_Particle_type);
-		for (i = 1; i <= N_Particle_type; i++)
-		{
-			fscanf(ip1,"%d\n",&NUM);
-			fscanf(ip1,"%lf\n",&dp);
-			fscanf(ip1,"%lf\n",&insertion_min_X);
-			fscanf(ip1,"%lf\n",&insertion_min_Y);
-			fscanf(ip1,"%lf\n",&insertion_max_X);
-			fscanf(ip1,"%lf\n",&insertion_max_Y);
-			fscanf(ip1,"%d\n",&insertion_rate);
-			fscanf(ip1,"%lf\n",&deletion_min_X);
-			fscanf(ip1,"%lf\n",&deletion_min_Y);
-			fscanf(ip1,"%lf\n",&deletion_max_X);
-			fscanf(ip1,"%lf\n",&deletion_max_Y);
-			fscanf(ip1,"%d\n",&discharge_rate);
+			Port_X[0]	=	0.06;
+			Port_Y[0]	=	0.13;
 		}
 		
-		fscanf(ip1,"%lf\n",&phi_s);
-		fscanf(ip1,"%lf\n",&rho_s);
-		fscanf(ip1,"%lf\n",&coeff_friction);
-		fscanf(ip1,"%lf\n",&coeff_restitution);	
-		fscanf(ip1,"%lf\n",&Kn);			
-		fscanf(ip1,"%lf\n",&sim_time);
+	Flag_Raceway_Computation	=	1;
+	N_Particle_type = 1;
+	if (N_Particle_type > 0)
+	{
+		NUM					=	1000;
+		dp					=	5e-3;
+		insertion_min_X		=	0.00;
+		insertion_min_Y		=	0.20;
+		insertion_max_X		=	0.05;
+		insertion_max_Y		=	0.25;
+		insertion_rate		=	100;
 		
-		fscanf(ip1,"%lf\n",&mark);
-		fscanf(ip1,"%lf\n",&time_step);		
+		deletion_min_X		=	0.00;
+		deletion_min_Y		=	0.00;
+		deletion_max_X		=	0.10;
+		deletion_max_Y		=	0.05;
+		discharge_rate		=	0;
+	}
+	
+			
+	phi_s				=	1.00;
+	rho_s				=	2500.00;
+	coeff_friction		=	0.30;
+	coeff_restitution	=	0.80;	
+	Kn					=	1000.00;			
+	sim_time			=	2.00;
+	
+	mark				=	1.10;
+	time_step			=	1.0e-6;		
 
-		fscanf(ip1,"%lf\n",&Raceway_Voidage);
-		fscanf(ip1,"%lf\n",&Domain_Voidage);		
-	fclose(ip1);
+	Raceway_Voidage		=	0.85;
+	Domain_Voidage		=	0.40;
+		
 	//---------------------------------------------------------------------
 	ip2=fopen("0.4.Input_Geometry.tmp","r");
 		fscanf(ip2,"%d\n",&n_tuyeres);
