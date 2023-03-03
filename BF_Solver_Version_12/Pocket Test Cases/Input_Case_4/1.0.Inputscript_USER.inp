@@ -1,0 +1,508 @@
+			PURE GAS SOLVER
+!-----------------------------------------------------------------
+0.40 0.70 0.048	Dimensions of the Domain (LxHxW)
+75 150 1		Grid Dimension of the Domain (Nx x Ny x Nz)
+0				Grid Type (Uniform{0}/Nonuniform{1})
+0.00 0.00 		Wall velocity at the top surface
+0.00 0.00 		Wall velocity at the bottom surface
+0.00 0.00 		Wall velocity at the left surface
+0.00 0.00 		Wall velocity at the right surface
+0.40			Domain Voidage
+0.85			Raceway Voidage
+!-----------------------------------------------------------------
+-->	GAS DETAILS
+!-----------------------------------------------------------------
+-1				Condition of gas flow (Increasing or Decreasing)
+850.0			Gas flow rate (in lpm)
+1.178			Density of the gas
+1.983e-5		Viscosity of the gas
+!-----------------------------------------------------------------
+-->	SOLID DETAILS
+!-----------------------------------------------------------------
+1				Correlation (0), Isostress(1), DEM(2) or Tracing(3) for voidage and raceway
+1				Number of Particle Types
+700				Number of bed particles
+0.00 0.20		Minimum point for the insertion box
+0.10 0.25		Maximum point for the insertion box
+100				Particle Insertion Rate
+0.00 0.00		Minimum point for the deletion box
+0.10 0.05		Maximum point for the deletion box
+0				Particle Removal Rate
+4.00e-3			Size of the particles
+1.0				Sphericity
+2500.0			Density of the Packing material
+0.3				Co-efficient of friction
+0.8				Co-efficient of restitution
+1000			Stiffness co-efficient
+2.0				Time for packing
+!-----------------------------------------------------------------
+-->	LIQUID DETAILS
+!-----------------------------------------------------------------
+0.00		Liquid flow rate through the rotameter
+1000.0		Density of the liquid
+0.001		Viscosity of the liquid
+80			Contact angle of the liquid with solids
+0.0723		Surface tension of the liquid
+!-----------------------------------------------------------------
+-->	FINES DETAILS
+!-----------------------------------------------------------------
+0.40		Fines mass flow rate (in kg/m2 s)
+116e-6		Size of fines particles
+1.0			Sphericity
+2500.0		Density of the fines fines
+0.8			Viscosity of the fines
+!-----------------------------------------------------------------
+-->	TUYERE DETAILS 
+!-----------------------------------------------------------------
+1			Number of tuyeres
+TUYERE 1
+15.00e-2		Height of Tuyere from bottom
+5.00e-3		Diameter of Tuyere opening
+4.00e-2		Protrusion depth of the Tuyere
+0.00		Angle of the Tuyere
+!-----------------------------------------------------------------
+-->	ROTAMETER DETAILS 
+!-----------------------------------------------------------------
+0			Number of liquid rotameters
+!-----------------------------------------------------------------
+-->	INTERNAL STRUCTURES DETAILS
+!-----------------------------------------------------------------
+0			Number of Internal Structure
+!-----------------------------------------------------------------
+-->	CONVERGENCE PARAMETERS
+!-----------------------------------------------------------------
+1.0e-1			Tolerance spatial convergence for gas flow
+1.0e-10			Mass Balance for fine flow
+1.00			Relax U
+1.00			Relax V
+1.00			Relax P
+1.00			Relax KE
+1.00			Relax DE
+1.00			Relax EPFD
+0.75			Point-wise relaxation U for gas (Omega_u)
+0.75			Point-wise relaxation V for gas
+1.40			Point-wise relaxation P for gas
+0.75			Point-wise relaxation KE for gas
+0.75			Point-wise relaxation DE for gas
+0.75			Point-wise relaxation U for fines
+0.75			Point-wise relaxation V for fines
+1.10			Mark
+1.0e-6			Timestep
+!-----------------------------------------------------------------
+-->	PRESSURE PORTS
+!-----------------------------------------------------------------
+10			Number of pressure ports
+0.06 0.13 	Location of Pressure port 01 (X, Y)
+0.06 0.15 	Location of Pressure port 02 (X, Y)
+0.06 0.17 	Location of Pressure port 03 (X, Y)
+0.06 0.25 	Location of Pressure port 04 (X, Y)
+0.06 0.35 	Location of Pressure port 05 (X, Y)
+0.06 0.45 	Location of Pressure port 06 (X, Y)
+0.06 0.55 	Location of Pressure port 07 (X, Y)
+0.11 0.15 	Location of Pressure port 08 (X, Y)
+0.21 0.15 	Location of Pressure port 09 (X, Y)
+0.31 0.15 	Location of Pressure port 10 (X, Y)
+!-----------------------------------------------------------------
+-->	TURBULENCE MODELLING PARAMETERS
+!-----------------------------------------------------------------
+1.44			C1			
+1.92			C2
+0.09			C mu
+1.00			Sigma k
+1.22			Sigma e
+!-----------------------------------------------------------------
+			END OF INPUTSCRIPT
+!-----------------------------------------------------------------
+
+
+3			Number of liquid rotameters
+ROTAMETER 1
+0.015			Distance of Rotameter from the left wall
+0.15			Height of Rotameter from bottom
+0.002			Diameter of Rotameter opening
+ROTAMETER 2
+0.025			Distance of Rotameter from the left wall
+0.15			Height of Rotameter from bottom
+0.002			Diameter of Rotameter opening
+ROTAMETER 3
+0.035			Distance of Rotameter from the left wall
+0.15			Height of Rotameter from bottom
+0.002			Diameter of Rotameter opening
+
+
+COHESIVE LAYOUT 1 Inverted V
+!-----------------------------------------------------------------
+12			Number of Internal Structure
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.025	0.21		Center of Brick 1
+0.00			Voidage of Brick 1
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.065	0.25		Center of Brick 2
+0.00			Voidage of Brick 2
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.105	0.29		Center of Brick 3
+0.00			Voidage of Brick 3
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.135	0.33		Center of Brick 4
+0.00			Voidage of Brick 4
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.165	0.37		Center of Brick 5
+0.00			Voidage of Brick 5
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.195	0.41		Center of Brick 6
+0.00			Voidage of Brick 6
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.225	0.45		Center of Brick 7
+0.00			Voidage of Brick 7
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.255	0.49		Center of Brick 8
+0.00			Voidage of Brick 8
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.285	0.53		Center of Brick 9
+0.00			Voidage of Brick 9
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.315	0.57		Center of Brick 10
+0.00			Voidage of Brick 10
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.345	0.61		Center of Brick 11
+0.00			Voidage of Brick 11
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.375	0.65		Center of Brick 12
+0.00			Voidage of Brick 12
+	
+COHESIVE LAYOUT 2 Upright V
+!-----------------------------------------------------------------
+12			Number of Internal Structure
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.025	0.65		Center of Brick 1
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.065	0.61		Center of Brick 2
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.105	0.57		Center of Brick 3
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.135	0.53		Center of Brick 4
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.165	0.49		Center of Brick 5
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.195	0.45		Center of Brick 6
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.225	0.41		Center of Brick 7
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.255	0.37		Center of Brick 8
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.285	0.33		Center of Brick 9
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.315	0.29		Center of Brick 10
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.345	0.25		Center of Brick 11
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.375	0.21		Center of Brick 12
+
+COHESIVE LAYOUT 3 W Shaped Cohesive zone
+!-----------------------------------------------------------------
+12			Number of Internal Structure
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.025	0.37		Center of Brick 1
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.065	0.33		Center of Brick 2
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.105	0.29		Center of Brick 3
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.135	0.33		Center of Brick 4
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.165	0.37		Center of Brick 5
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.195	0.41		Center of Brick 6
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.225	0.45		Center of Brick 7
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.255	0.49		Center of Brick 8
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.285	0.53		Center of Brick 9
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.315	0.57		Center of Brick 10
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.345	0.61		Center of Brick 11
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.375	0.65		Center of Brick 12
+
+COHESIVE LAYOUT 1 Inverted V Circular block
+!-----------------------------------------------------------------
+12				Number of Internal Structure
+CIRCLE
+0.025	0.21	Center of Brick 1
+0.020			Radius
+CIRCLE
+0.065	0.25	Center of Brick 2
+0.020			Radius
+CIRCLE
+0.105	0.29	Center of Brick 3
+0.020			Radius
+CIRCLE
+0.135	0.33	Center of Brick 4
+0.020			Radius
+CIRCLE
+0.165	0.37	Center of Brick 5
+0.020			Radius
+CIRCLE
+0.195	0.41	Center of Brick 6
+0.020			Radius
+CIRCLE
+0.225	0.45	Center of Brick 7
+0.020			Radius
+CIRCLE
+0.255	0.49	Center of Brick 8
+0.020			Radius
+CIRCLE
+0.285	0.53	Center of Brick 9
+0.020			Radius
+CIRCLE
+0.315	0.57	Center of Brick 10
+0.020			Radius
+CIRCLE
+0.345	0.61	Center of Brick 11
+0.020			Radius
+CIRCLE
+0.375	0.65	Center of Brick 12
+0.020			Radius
+6				Number of Internal Structures
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.025	0.21	Center of Brick 1
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.105	0.29	Center of Brick 2
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.165	0.37	Center of Brick 3
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.225	0.45	Center of Brick 4
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.285	0.53	Center of Brick 5
+BLOCK
+0.05 0.02 		Dimensions of the brick (L x W)
+0.345	0.61	Center of Brick 6
+
+COHESIVE LAYOUT 3
+4				Number of cohesive bricks
+0.05 0.02 		Dimensions of the brick (L x W)
+0.105	0.29	Center of Brick 1
+0.165	0.37	Center of Brick 2
+0.225	0.45	Center of Brick 3
+0.285	0.53	Center of Brick 4
+
+INTERNAL STRUCTURES LAYOUT 1 :: DEADMAN
+TRIANGLE
+0.38 0.00		Point C
+0.38 0.10		Point B
+0.28 0.00		Point A
+
+INTERNAL STRUCTURES LAYOUT 2 :: CENTER CIRCLE
+CIRCLE
+0.19 0.35		Center Point
+0.10			Radius
+
+
+
+COHESIVE LAYOUT 1 Inverted V (From Dong 2003)
+!-----------------------------------------------------------------
+9			Number of Internal Structure
+BLOCK
+0.02 0.009 		Dimensions of the brick (L x W)
+0.09131	0.225	Center of Brick 1
+BLOCK
+0.02 0.009 		Dimensions of the brick (L x W)
+0.082	0.207	Center of Brick 2
+BLOCK
+0.02 0.009 		Dimensions of the brick (L x W)
+0.0707	0.186	Center of Brick 3
+BLOCK
+0.02 0.009 		Dimensions of the brick (L x W)
+0.0607	0.166	Center of Brick 4
+BLOCK
+0.02 0.009 		Dimensions of the brick (L x W)
+0.0493	0.144	Center of Brick 5
+BLOCK
+0.02 0.009 		Dimensions of the brick (L x W)
+0.04	0.126	Center of Brick 6
+BLOCK
+0.02 0.009 		Dimensions of the brick (L x W)
+0.03	0.105	Center of Brick 7
+BLOCK
+0.02 0.009 		Dimensions of the brick (L x W)
+0.0208	0.0848	Center of Brick 8
+BLOCK
+0.02 0.009 		Dimensions of the brick (L x W)
+0.0115	0.0659	Center of Brick 9
+
+
+!-----------------------------------------------------------------
+-->	EXTERNAL STRUCTURES DETAILS (clockwise)
+!-----------------------------------------------------------------
+3				Number of Walls
+WALL 1
+0.38 0.00		Point A
+0.38 0.10		Point B
+WALL 2
+0.38 0.00		Point A
+0.38 0.10		Point B
+WALL 3
+0.38 0.00		Point A
+0.38 0.10		Point B
+
+
+
+7 35 0.048	Dimensions of the Domain (LxHxW)
+250 500 1		Grid Dimension of the Domain (Nx x Ny x Nz)
+
+0			Correlation (0), Isostress(1), DEM(2) or Tracing(3) for voidage and raceway
+1			Number of Particle Types
+2000			Number of bed particles
+0.00 0.12		Minimum point for the insertion box
+0.10 0.15		Maximum point for the insertion box
+0			Particle Insertion Rate
+0.00 0.00		Minimum point for the deletion box
+0.38 0.10		Maximum point for the deletion box
+0			Particle Removal Rate
+4.00e-3			Size of the particles
+1.0			Sphericity
+2500.0			Density of the Packing material
+0.3			Co-efficient of friction
+0.8			Co-efficient of restitution
+1000			Stiffness co-efficient
+2.0			Time for packing
+!-----------------------------------------------------------------
+-->	INTERNAL STRUCTURES DETAILS
+!-----------------------------------------------------------------
+21			Number of Internal Structure
+BLOCK
+0.655 6.4 		Dimensions of the brick (L x W)
+0.3275	3.2		Center of Brick 1
+0.00			Voidage of HEARTH
+TRIANGLE
+0	6.4		Point C 
+0.655	6.4		Point B
+0	10		Point A
+0.00			Voidage of BOSH
+TRIANGLE
+0	13.3		Point C 
+2.31	29.6		Point B
+0	29.6		Point A
+0.00			Voidage of SHAFT
+BLOCK
+2.31 2.4 		Dimensions of the brick (L x W) 
+1.155	30.8		Center of Brick 2
+0.00			Voidage of THROAT
+TRIANGLE
+1.40	32.0		Point C 
+2.31	32.0		Point B
+1.40	35		Point A
+0.00			Voidage of HOPPER
+CIRCLE
+13 -5			Center Point
+12			Radius
+0.00			Voidage of DEADMAN
+BLOCK
+1.035  0.39		Dimensions of the brick (L x W) 
+0.8625 8.08		Center of CZ 1
+0.00			Voidage of CZ 1
+BLOCK
+1.689  0.39		Dimensions of the brick (L x W) 
+1.0855 8.78		Center of CZ 2
+0.00			Voidage of CZ 2
+BLOCK
+2.440 0.39		Dimensions of the brick (L x W) 
+1.0836 9.48		Center of CZ 3
+0.00			Voidage of CZ 3
+BLOCK
+2.5155  0.39		Dimensions of the brick (L x W) 
+1.294 10.18		Center of CZ 4
+0.00			Voidage of CZ 4
+BLOCK
+2.7455  0.39		Dimensions of the brick (L x W) 
+1.572 10.88		Center of CZ 5
+0.00			Voidage of CZ 5
+BLOCK
+2.694  0.39		Dimensions of the brick (L x W) 
+1.940 11.58		Center of CZ 6
+0.00			Voidage of CZ 6
+BLOCK
+2.724  0.39		Dimensions of the brick (L x W) 
+2.294 12.28		Center of CZ 7
+0.00			Voidage of CZ 7
+BLOCK
+2.63  0.39		Dimensions of the brick (L x W) 
+2.65 12.98		Center of CZ 8
+0.00			Voidage of CZ 8
+BLOCK
+2.43  0.39		Dimensions of the brick (L x W) 
+3.084 13.68		Center of CZ 9
+0.00			Voidage of CZ 9
+BLOCK
+2.25  0.39		Dimensions of the brick (L x W) 
+3.45 14.38		Center of CZ 10
+0.00			Voidage of CZ 10
+BLOCK
+2.15  0.39		Dimensions of the brick (L x W) 
+4.03 15.08		Center of CZ 11
+0.00			Voidage of CZ 11
+BLOCK
+2.03  0.39		Dimensions of the brick (L x W) 
+4.97 15.78		Center of CZ 12
+0.00			Voidage of CZ 12
+BLOCK
+1.50  0.39		Dimensions of the brick (L x W) 
+5.62 16.48		Center of CZ 13
+0.00			Voidage of CZ 13
+BLOCK
+1.10  0.39		Dimensions of the brick (L x W) 
+6.33 17.18		Center of CZ 14
+0.00			Voidage of CZ 14
+BLOCK
+0.59  0.39		Dimensions of the brick (L x W) 
+6.715 17.88		Center of CZ 15
+0.00			Voidage of CZ 15
+
+TUYERE 1
+5.70			Height of Tuyere from bottom
+0.46			Diameter of Tuyere opening
+2.30			Protrusion depth of the Tuyere
+0.00			Angle of the Tuyere
